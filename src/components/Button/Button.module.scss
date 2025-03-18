@@ -1,0 +1,213 @@
+.button {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 12px 16px;
+  gap: 12px;
+  transition: background 0.3s ease;
+  border: none;
+  cursor: pointer;
+  span {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &.primary {
+    background-color: var(--ultramarine-default-color);
+    color: var(--text-contrast-color);
+
+    &:hover {
+      background-color: var(--ultramarine-dark-color);
+    }
+
+    &:active {
+      background-color: var(--ultramarine-light-color-1);
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      background-color: var(--gray-color-2);
+      color: var(--text-blind-color);
+      pointer-events: none;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+      background-color: var(--gray-color-2);
+      color: var(--text-blind-color);
+    }
+  }
+
+  &.secondary {
+    background-color: var(--white);
+    color: var(--ultramarine-light-color-1);
+    border: 1px solid var(--ultramarine-light-color-1);
+
+    &:hover {
+      background-color: var(--gray-color-1);
+    }
+
+    &:active {
+      background-color: var(--gray-color-2);
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+      background-color: var(--gray-color-2);
+      color: var(--text-blind-color);
+      border: 1px solid var(--text-blind-color);
+    }
+  }
+
+  &.text {
+    width: 107px;
+    height: 22px;
+    border: none;
+    padding: 0;
+    color: var(--ultramarine-light-color-1);
+    background-color: transparent;
+
+    &.small {
+      width: 107px;
+      height: 22px;
+      gap: 8px;
+      span {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    &:hover {
+      color: var(--ultramarine-dark-color);
+    }
+
+    &:active {
+      color: var(--ultramarine-light-color-1);
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+      color: var(--text-blind-color);
+    }
+  }
+
+  &.icon {
+    gap: 0;
+    border-radius: 12px;
+    padding: 8px;
+    background-color: transparent;
+
+    .icon {
+      svg {
+        width: 100%;
+        height: 100%;
+
+        path {
+          stroke: var(--text-secondary-color);
+        }
+      }
+    }
+
+    // Hover и Active для обычного состояния
+    &:hover {
+      .icon svg path {
+        stroke: var(--ultramarine-default-color);
+      }
+    }
+
+    &:active {
+      .icon svg path {
+        stroke: var(--ultramarine-default-color);
+      }
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+      .icon svg path {
+        stroke: var(--text-blind-color);
+      }
+    }
+  }
+
+  &.icon-fill {
+    gap: 0;
+    border-radius: 12px;
+    padding: 8px;
+    background-color: var(--gray-color-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+      width: 100%;
+      height: 100%;
+
+      svg {
+        width: 100%;
+        height: 100%;
+
+        path {
+          stroke: var(--text-secondary-color);
+        }
+      }
+    }
+
+    &:hover {
+      background-color: var(--gray-color-3);
+
+      .icon svg path {
+        stroke: var(--ultramarine-default-color);
+      }
+    }
+
+    &:active {
+      background-color: var(--gray-color-4);
+
+      .icon svg path {
+        stroke: var(--ultramarine-default-color);
+      }
+    }
+    &.disabled {
+      cursor: not-allowed;
+      background-color: var(--gray-color-2);
+      color: var(--text-blind-color);
+      pointer-events: none;
+    }
+  }
+
+  &.user {
+    gap: 0;
+    width: 32px;
+    height: 32px;
+    background-color: var(--ultramarine-default-color);
+    color: var(--white);
+    padding: 4px 0 0 4px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      path {
+        stroke: currentColor;
+      }
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+
+      svg path {
+        stroke: var(--text-blind-color);
+      }
+    }
+  }
+}
