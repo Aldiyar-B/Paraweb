@@ -1,0 +1,45 @@
+@use '../../style/utils/typography.scss' as *;
+@use '../../style/global/breakpoints.scss' as *;
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary-color);
+  cursor: pointer;
+  transition:
+    color 0.3s,
+    background 0.3s;
+
+  @include text-button;
+
+  &.active {
+    color: var(--text-color);
+  }
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  padding: 6px;
+  background-color: var(--gray-color-5);
+  color: var(--text-secondary-color);
+  transition:
+    background 0.3s,
+    color 0.3s;
+
+  @include text-button-small;
+
+  &.active {
+    background-color: var(--ultramarine-default-color);
+    color: var(--text-contrast-color);
+  }
+}

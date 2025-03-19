@@ -1,5 +1,5 @@
 @use '../../style/utils/typography.scss' as *;
-@use '../../style/global/breakpoints.scss' as *; // Добавляем импорт breakpoints
+@use '../../style/global/breakpoints.scss' as *;
 
 .dropdownItem {
   display: flex;
@@ -11,7 +11,7 @@
   transition: background 0.3s;
   color: var(--text-color);
 
-  @include text-body-small; // Достаточно только этого
+  @include text-body-small;
 
   &:hover {
     background: var(--gray-color-2);
