@@ -1,0 +1,47 @@
+@use '../../style/utils/typography.scss' as *;
+@use '../../style/global/breakpoints.scss' as *; // Добавляем импорт breakpoints
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s;
+  color: var(--text-color);
+
+  @include text-body-small; // Достаточно только этого
+
+  &:hover {
+    background: var(--gray-color-2);
+  }
+
+  &:active {
+    background: transparent;
+  }
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  &:active {
+    color: var(--ultramarine-default-color);
+  }
+}
+
+.dropdownItem:active .checkbox + .text,
+.dropdownItem:active .icon + .text {
+  color: var(--text-color);
+}

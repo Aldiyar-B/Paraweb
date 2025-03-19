@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import "../style/main.scss";
+import { Link } from 'react-router-dom';
+import '../style/main.scss';
 
 function News() {
   return (
@@ -13,6 +13,10 @@ function News() {
         <br />
         <Link to="/404">
           <button className="text-button">Открыть 404 страницу</button>
+        </Link>
+        <br />
+        <Link to="/test">
+          <button className="text-button">Открыть test полигон</button>
         </Link>
       </nav>
     </div>

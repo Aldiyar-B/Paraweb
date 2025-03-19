@@ -1,9 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PublicLayout from "./layouts/PublicLayout";
-import PrivateLayout from "./layouts/PrivateLayout";
-import NotFound from "./views/NotFound";
-import Dashboard from "./views/DashBoard";
-import News from "./views/News";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import PublicLayout from './layouts/PublicLayout';
+import PrivateLayout from './layouts/PrivateLayout';
+import NotFound from './views/NotFound';
+import Dashboard from './views/DashBoard';
+import News from './views/News';
+import Test from './views/Test';
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
       <Routes>
         <Route path="/" element={<PublicLayout />}>
           <Route index element={<News />} />
+        </Route>
+        <Route path="/test" element={<PublicLayout />}>
+          <Route index element={<Test />} />
         </Route>
         <Route path="/dashboard" element={<PrivateLayout />}>
           <Route index element={<Dashboard />} />
