@@ -1,0 +1,38 @@
+@use '../../style/utils/typography.scss' as *;
+@use '../../style/global/breakpoints.scss' as *;
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+
+  @include text-caption;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--primary-color);
+  &:hover {
+    color: var(--ultramarine-default-color);
+  }
+}
+
+.current {
+  font-weight: bold;
+  color: var(--text-primary-color);
+}
+
+.separator {
+  margin: 0 18px;
+  color: var(--text-secondary-color);
+}
+
+.disabled {
+  color: var(--text-secondary-color);
+  cursor: not-allowed;
+}

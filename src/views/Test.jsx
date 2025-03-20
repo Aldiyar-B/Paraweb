@@ -4,6 +4,19 @@ import Dropdown from '../components/DropDown/DropDown';
 import Tab from '../components/Tab/Tab';
 import Tag from '../components/Tag/Tag';
 
+import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
+
+const breadcrumbItems = [
+  { label: 'Главная', path: '/', disabled: false },
+  { label: 'Категории', path: '/categories', disabled: true },
+  { label: 'Электроника', path: '/categories/electronics', disabled: false },
+  {
+    label: 'Смартфоны',
+    path: '/categories/electronics/smartphones',
+    disabled: false,
+  },
+];
+
 function Test() {
   const [activeTab, setActiveTab] = useState('Tab 1');
 
@@ -54,6 +67,7 @@ function Test() {
         />
       </div>
       <br />
+
       {/* TAG */}
       <div style={{ display: 'flex ', justifyContent: 'space-evenly' }}>
         <h3 className="text-h3">Tag</h3>
@@ -65,6 +79,16 @@ function Test() {
         <Tag label="Английский" color="purple" />
         {/* <Tag label="Английский" subtitle="B1" color="purple" /> */}
         <Tag label="Математика" color="blue" />
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      {/* Breadcrumbs */}
+      <div style={{ display: 'flex ', justifyContent: 'space-evenly' }}>
+        <Breadcrumbs items={breadcrumbItems} />
       </div>
     </div>
   );
