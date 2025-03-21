@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Dropdown from '../components/DropDown/DropDown';
 import Tab from '../components/Tab/Tab';
 import Tag from '../components/Tag/Tag';
-
+import ToggleInput from '../components/ToggleInput/ToggleInput';
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 
 const breadcrumbItems = [
@@ -88,7 +88,30 @@ function Test() {
       <br />
       {/* Breadcrumbs */}
       <div style={{ display: 'flex ', justifyContent: 'space-evenly' }}>
+        <h3 className="text-h3">Breadcrumbs</h3>
         <Breadcrumbs items={breadcrumbItems} />
+      </div>
+
+      {/* ToggleInput */}
+      <div style={{ display: 'flex ', justifyContent: 'space-evenly' }}>
+        <h3 className="text-h3">ToggleInput</h3>
+        <ToggleInput type="checkbox" defaultChecked={true} />
+        <ToggleInput type="checkbox" defaultChecked={true} />
+        <ToggleInput type="radiobutton" name="group1" defaultChecked={true} />
+        <ToggleInput type="radiobutton" name="group1" defaultChecked={true} />
+        <ToggleInput type="checkbox" defaultChecked={true} disabled />
+        <ToggleInput
+          type="radiobutton"
+          name="group1"
+          defaultChecked={true}
+          disabled
+        />
+        <ToggleInput
+          type="radiobutton"
+          name="group1"
+          defaultChecked={false}
+          disabled
+        />
       </div>
     </div>
   );

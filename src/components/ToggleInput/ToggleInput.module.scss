@@ -1,0 +1,91 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+}
+
+// Общие стили
+.checkbox,
+.radiobutton {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    border: 2px solid var(--ultramarine-dark-color);
+  }
+}
+
+// Чекбокс
+.checkbox {
+  border-radius: 4px;
+}
+input:checked + .checkbox {
+  background-color: var(--ultramarine-default-color);
+  color: var(--text-contrast-color);
+  border: none;
+  &:hover {
+    background-color: var(--ultramarine-dark-color);
+  }
+}
+
+input:checked + .checkbox::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-color: var(--text-contrast-color);
+  mask-image: url('../../assets/svg/icons/check.svg');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  position: absolute;
+}
+
+// Радиокнопка
+.radiobutton {
+  border-radius: 50%;
+}
+input:checked + .radiobutton {
+  background-color: var(--text-contrast-color);
+  border-color: var(--ultramarine-default-color);
+}
+
+input:checked + .radiobutton::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background-color: var(--ultramarine-default-color);
+  border-radius: 50%;
+  position: absolute;
+}
+input:checked + .radiobutton:hover {
+  border-color: var(--ultramarine-dark-color);
+}
+input:checked + .radiobutton:hover::after {
+  background-color: var(--ultramarine-dark-color);
+}
+
+//! disabled
+input:disabled + .checkbox,
+input:disabled + .radiobutton {
+  opacity: 0.5;
+  background-color: var(--gray-color-3);
+  border: 2px solid var(--border-color);
+}
+
+// Галочка и точка внутри тоже серые
+input:disabled:checked + .checkbox::after,
+input:disabled:checked + .radiobutton::after {
+  background-color: var(--border-color);
+}
+
+input:disabled + .checkbox,
+input:disabled + .radiobutton {
+  pointer-events: none; // Полностью отключаем hover и клики
+}
