@@ -5,6 +5,7 @@ import Tab from '../components/Tab/Tab';
 import Tag from '../components/Tag/Tag';
 import ToggleInput from '../components/ToggleInput/ToggleInput';
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
+import Switcher from '../components/Switcher/Switcher';
 
 const breadcrumbItems = [
   { label: 'Главная', path: '/', disabled: false },
@@ -19,6 +20,7 @@ const breadcrumbItems = [
 
 function Test() {
   const [activeTab, setActiveTab] = useState('Tab 1');
+  const [isActive, setIsActive] = useState(false);
 
   return (
     <div style={{ marginTop: '50px' }}>
@@ -111,6 +113,18 @@ function Test() {
           name="group1"
           defaultChecked={false}
           disabled
+        />
+      </div>
+
+      {/* Switcher */}
+      <div style={{ display: 'flex ', justifyContent: 'space-evenly' }}>
+        <h3 className="text-h3">Switcher</h3>
+        <h3>Текущий статус: {isActive ? 'Включено' : 'Выключено'}</h3>
+        <Switcher
+          checked={isActive}
+          onChange={setIsActive}
+          leftIcon="share"
+          rightIcon="user"
         />
       </div>
     </div>
