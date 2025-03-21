@@ -11,8 +11,8 @@
 // Общие стили
 .checkbox,
 .radiobutton {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border: 2px solid var(--border-color);
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@
 
 // Чекбокс
 .checkbox {
-  border-radius: 4px;
+  border-radius: 6px;
 }
 input:checked + .checkbox {
   background-color: var(--ultramarine-default-color);
@@ -88,4 +88,24 @@ input:disabled:checked + .radiobutton::after {
 input:disabled + .checkbox,
 input:disabled + .radiobutton {
   pointer-events: none; // Полностью отключаем hover и клики
+}
+
+//* Адаптацив под мобильные устройства
+@media (max-width: 768px) {
+  .checkbox,
+  .radiobutton {
+    width: 16px;
+    height: 16px;
+    border-width: 1px;
+  }
+
+  input:checked + .checkbox::after {
+    width: 15px;
+    height: 15px;
+  }
+
+  input:checked + .radiobutton::after {
+    width: 8px;
+    height: 8px;
+  }
 }
