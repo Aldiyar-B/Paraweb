@@ -1,0 +1,137 @@
+.toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  width: 42px; /* Начальная ширина */
+  height: 20px; /* Начальная высота */
+  background-color: transparent;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+  border: 1px solid var(--border-color);
+
+  input {
+    display: none;
+  }
+
+  .slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 5px;
+  }
+
+  .indicator {
+    position: absolute;
+    left: 3px;
+    width: 12px; /* Начальная ширина индикатора */
+    height: 12px; /* Начальная высота индикатора */
+    background-color: var(--text-blind-color);
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .icon {
+    svg {
+      position: absolute;
+      top: 0.4rem;
+      left: 0.1rem;
+      width: 18px;
+      height: 18px;
+    }
+    svg path {
+      stroke: var(--text-contrast-color);
+    }
+  }
+
+  /* Состояние активного переключателя */
+  &.active {
+    background-color: var(--ultramarine-default-color);
+    border: 1px solid var(--ultramarine-default-color);
+
+    &:hover {
+      background-color: var(--ultramarine-dark-color);
+      border: 1px solid var(--ultramarine-dark-color);
+    }
+
+    .indicator {
+      transform: translateX(25px);
+      background-color: var(--text-contrast-color);
+    }
+
+    &:active {
+      background-color: var(--ultramarine-light-color-1);
+      border: 1px solid var(--ultramarine-light-color-1);
+    }
+  }
+
+  /* Состояние неактивного переключателя */
+  &:not(.active) {
+    &:hover {
+      border: 1px solid var(--ultramarine-default-color);
+      .indicator {
+        background-color: var(--ultramarine-default-color);
+      }
+    }
+
+    &:active {
+      border: 1px solid var(--ultramarine-light-color-1);
+      .indicator {
+        background-color: var(--ultramarine-light-color-1);
+      }
+    }
+  }
+
+  /* Состояние для disabled */
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: var(--gray-color-2);
+    border: none;
+
+    &:hover,
+    &:active {
+      border: none;
+      .indicator {
+        background-color: var(--text-blind-color);
+      }
+    }
+
+    &.active {
+      background-color: var(--gray-color-2);
+      .indicator {
+        background-color: var(--text-blind-color);
+      }
+
+      .icon {
+        svg path {
+          stroke: var(--text-blind-color);
+        }
+      }
+    }
+  }
+}
+
+/* Мобильные стили для экранов до 768px */
+@media (max-width: 768px) {
+  .toggle {
+    width: 34px; /* Размер переключателя */
+    height: 16px; /* Размер переключателя */
+
+    &.active {
+      .indicator {
+        transform: translateX(16px);
+      }
+    }
+
+    .icon {
+      svg {
+        width: 14px; /* Уменьшение иконки */
+        height: 14px; /* Уменьшение иконки */
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@ import Tag from '../components/Tag/Tag';
 import ToggleInput from '../components/ToggleInput/ToggleInput';
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 import Switcher from '../components/Switcher/Switcher';
+import Toggle from '../components/Toggle/Toggle';
 
 const breadcrumbItems = [
   { label: 'Главная', path: '/', disabled: false },
@@ -125,6 +126,31 @@ function Test() {
           onChange={setIsActive}
           leftIcon="raiting"
           rightIcon="quote"
+        />
+      </div>
+
+      {/* Toggle */}
+      <div style={{ display: 'flex ', justifyContent: 'space-evenly' }}>
+        <br />
+        <br />
+        <br />
+        <h3 className="text-h3">Toggle</h3>
+        <Toggle
+          initialState={false}
+          onChange={(state) => console.log('Toggle:', state)}
+        />
+        <br />
+        <Toggle
+          initialState={false}
+          onChange={(state) => console.log('Toggle 1:', state)}
+          disabled // Этот переключатель заблокирован
+        />
+        <br />
+        <Toggle
+          initialState={true}
+          onChange={(state) => console.log('Toggle 2:', state)}
+          disabled
+          // Этот переключатель активен и может быть изменен
         />
       </div>
     </div>
