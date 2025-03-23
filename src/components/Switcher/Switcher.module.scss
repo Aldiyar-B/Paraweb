@@ -17,12 +17,14 @@
     border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
     padding: 4px;
   }
 
   .indicator {
     position: absolute;
+    left: 8px;
     width: 36px;
     height: 36px;
     background-color: var(--ultramarine-default-color);
@@ -31,29 +33,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .slider .icon {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-secondary-color);
-    transition: color 0.3s;
-    z-index: 5;
 
     svg path {
-      stroke: var(--text-secondary-color);
+      stroke: var(--white);
     }
   }
 
-  .indicator .icon {
-    svg path {
-      stroke: var(--white-color);
-    }
+  svg path {
+    stroke: var(--text-secondary-color);
   }
 
+  /* Эффект hover при наведении для неактивной иконки */
+  .slider:hover svg path {
+    stroke: var(--ultramarine-default-color);
+  }
+
+  /* Эффект hover при наведении для активной иконки*/
+  .slider:hover .indicator svg path {
+    stroke: var(--white);
+  }
+
+  /* Двигаем индикатор при активации*/
   input:checked + .slider .indicator {
     transform: translateX(40px);
   }

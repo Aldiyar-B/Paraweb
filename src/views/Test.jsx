@@ -119,12 +119,12 @@ function Test() {
       {/* Switcher */}
       <div style={{ display: 'flex ', justifyContent: 'space-evenly' }}>
         <h3 className="text-h3">Switcher</h3>
-        <h3>Текущий статус: {isActive ? 'Включено' : 'Выключено'}</h3>
+        {/* <h3>Текущий статус: {isActive ? 'Включено' : 'Выключено'}</h3> */}
         <Switcher
           checked={isActive}
           onChange={setIsActive}
-          leftIcon="share"
-          rightIcon="user"
+          leftIcon="raiting"
+          rightIcon="quote"
         />
       </div>
     </div>

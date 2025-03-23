@@ -33,18 +33,21 @@ const Switcher = ({
 
       {/* Внешний контейнер */}
       <span className={styles.slider}>
-        {/* Левая иконка (всегда видима) */}
+        {/* Левая иконка */}
         <span
           className={styles.icon}
           dangerouslySetInnerHTML={{ __html: getIcon(leftIcon) }}
         />
 
-        {/* Подвижный индикатор (с белой иконкой) */}
-        <span className={styles.indicator}>
-          <span className={styles.icon} />
-        </span>
+        {/* Индикатор с белой иконкой при активации */}
+        <span
+          className={styles.indicator}
+          dangerouslySetInnerHTML={{
+            __html: getIcon(isChecked ? rightIcon : leftIcon),
+          }}
+        />
 
-        {/* Правая иконка (всегда видима) */}
+        {/* Правая иконка */}
         <span
           className={styles.icon}
           dangerouslySetInnerHTML={{ __html: getIcon(rightIcon) }}
