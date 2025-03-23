@@ -3,7 +3,9 @@
   align-items: center;
   cursor: pointer;
   position: relative;
-
+  background-color: var(--white);
+  border-radius: 12px; /* Закругляем края */
+  overflow: hidden; /* Ограничиваем выход элементов за границы */
   input {
     display: none;
   }
@@ -11,20 +13,20 @@
   .slider {
     width: 80px;
     height: 40px;
-    background-color: var(--white-color);
-    border-radius: 20px;
+    background-color: var(--white);
+    border-radius: 12px;
     position: relative;
     border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    padding: 4px;
+    padding: 2px;
   }
 
   .indicator {
     position: absolute;
-    left: 8px;
+    left: 5px;
     width: 36px;
     height: 36px;
     background-color: var(--ultramarine-default-color);
@@ -63,5 +65,28 @@
     cursor: not-allowed;
     opacity: 0.5;
     pointer-events: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .switcher {
+    .slider {
+      width: 72px;
+      height: 36px;
+      background-color: var(--white);
+      padding: 2px;
+      gap: 14px;
+    }
+    .indicator {
+      width: 32px;
+      height: 32px;
+      left: 4px;
+      border-radius: 10px;
+    }
+
+    /* Двигаем индикатор при активации*/
+    input:checked + .slider .indicator {
+      transform: translateX(35px);
+    }
   }
 }
