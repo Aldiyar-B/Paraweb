@@ -7,6 +7,7 @@ import ToggleInput from '../components/ToggleInput/ToggleInput';
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 import Switcher from '../components/Switcher/Switcher';
 import Toggle from '../components/Toggle/Toggle';
+import Pagination from '../components/Pagination/Pagination';
 
 const breadcrumbItems = [
   { label: 'Главная', path: '/', disabled: false },
@@ -22,6 +23,7 @@ const breadcrumbItems = [
 function Test() {
   const [activeTab, setActiveTab] = useState('Tab 1');
   const [isActive, setIsActive] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
   return (
     <div style={{ marginTop: '50px' }}>
@@ -151,6 +153,24 @@ function Test() {
           onChange={(state) => console.log('Toggle 2:', state)}
           disabled
           // Этот переключатель активен и может быть изменен
+        />
+      </div>
+      {/* Paggination */}
+      <div style={{ display: 'flex ', justifyContent: 'space-evenly' }}>
+        <br />
+        <h3 className="text-h3">Paggination</h3>
+        <Pagination
+          totalPages={12}
+          onPageChange={setCurrentPage}
+          leftIcon="chevron-left"
+          rightIcon="chevron-right"
+        />
+        <Pagination
+          totalPages={12}
+          onPageChange={setCurrentPage}
+          leftIcon="chevron-left"
+          rightIcon="chevron-right"
+          disabled
         />
       </div>
     </div>
