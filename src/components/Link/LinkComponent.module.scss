@@ -1,0 +1,124 @@
+@use '../../style/utils/typography.scss' as *;
+@use '../../style/global/breakpoints.scss' as *;
+
+.linkWrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  @include text-body;
+}
+
+.link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+
+  /* Подчеркивание для ссылок при hover и active */
+  &:hover {
+    color: var(--ultramarine-default-color);
+    text-decoration: underline;
+  }
+  &:active {
+    color: var(--ultramarine-default-color);
+    text-decoration: underline;
+  }
+
+  /* Для социальных ссылок убираем подчеркивание */
+  &.social {
+    text-decoration: none; /* Убираем подчеркивание */
+    &:hover {
+      color: var(--ultramarine-default-color);
+      text-decoration: none; /* Убираем подчеркивание */
+    }
+    &:active {
+      color: var(--ultramarine-default-color);
+      text-decoration: none; /* Убираем подчеркивание */
+    }
+  }
+}
+
+/* Размеры */
+.small {
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+.large {
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Текстовая ссылка */
+.text {
+  gap: 4px;
+  /* Добавляем hover для .text */
+  &:hover {
+    color: var(--ultramarine-default-color);
+    text-decoration: underline;
+  }
+  &:active {
+    color: var(--ultramarine-default-color);
+    text-decoration: underline;
+  }
+}
+
+/* Иконка */
+.icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg path {
+    stroke: var(--ultramarine-default-color);
+  }
+
+  /* Добавляем hover для иконки */
+  &:hover {
+    color: var(--ultramarine-default-color);
+    text-decoration: underline;
+  }
+  &:active {
+    color: var(--ultramarine-default-color);
+    text-decoration: underline;
+  }
+}
+
+/* Социальные ссылки */
+.social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  background: var(--gray-color-3);
+  border-radius: 8px;
+
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  svg path {
+    fill: var(--text-secondary-color);
+    stroke: var(--text-secondary-color);
+  }
+}
+.social {
+  text-decoration: none; /* Убираем подчеркивание */
+
+  &:hover {
+    text-decoration: none; /* Убираем подчеркивание при наведении */
+    color: var(--ultramarine-default-color); /* Цвет при наведении */
+  }
+
+  &:active {
+    text-decoration: none; /* Убираем подчеркивание при активном состоянии */
+    color: var(--ultramarine-default-color); /* Цвет при активации */
+  }
+}

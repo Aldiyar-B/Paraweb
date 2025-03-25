@@ -8,6 +8,7 @@ import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 import Switcher from '../components/Switcher/Switcher';
 import Toggle from '../components/Toggle/Toggle';
 import Pagination from '../components/Pagination/Pagination';
+import LinkComponent from '../components/Link/LinkComponent';
 
 const breadcrumbItems = [
   { label: 'Главная', path: '/', disabled: false },
@@ -26,7 +27,10 @@ function Test() {
   const [currentPage, setCurrentPage] = useState(1);
 
   return (
-    <div style={{ marginTop: '50px' }}>
+    <div
+      style={{ marginTop: '50px', height: '100vh', marginBottom: '500px' }}
+      className="container"
+    >
       <h1 className="text-h1">Testовый полигон </h1>
       <Link to="/">
         <button className="text-button">Выйти</button>
@@ -172,6 +176,29 @@ function Test() {
           rightIcon="chevron-right"
           disabled
         />
+      </div>
+      {/* Link */}
+      <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+        <LinkComponent size="small" type="text" href="#">
+          Small Text Link
+        </LinkComponent>
+        <LinkComponent size="large" type="text" href="#">
+          Large Text Link
+        </LinkComponent>
+
+        <LinkComponent size="small" type="icon" icon="link" href="#">
+          Hello World{' '}
+        </LinkComponent>
+        <LinkComponent size="large" type="icon" icon="link" href="#">
+          Link
+        </LinkComponent>
+
+        <LinkComponent size="small" type="social" icon="social-vk" href="#">
+          Hello World{' '}
+        </LinkComponent>
+        <LinkComponent size="large" type="social" icon="social-vk" href="#">
+          Hello World
+        </LinkComponent>
       </div>
     </div>
   );
