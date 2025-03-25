@@ -1,0 +1,92 @@
+@use '../../style/utils/typography.scss' as *;
+@use '../../style/global/breakpoints.scss' as *;
+
+.alert {
+  position: fixed;
+  top: 30%;
+  right: 30%;
+  padding: 24px;
+  border-radius: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 0.3s ease-in-out;
+  max-width: 440px;
+  max-height: 96px;
+
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--card-color);
+  @include text-body-small;
+}
+
+.success {
+  border: 1px solid var(--electric-green-default-color);
+
+  svg path {
+    stroke: var(--electric-green-default-color);
+  }
+}
+
+.error {
+  border: 1px solid var(--suai-red-default-color);
+
+  svg path {
+    stroke: var(--suai-red-default-color);
+  }
+}
+
+.title {
+  line-height: 20px;
+  letter-spacing: 0%;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 0.8rem;
+}
+
+.message {
+  line-height: 20px;
+  letter-spacing: 0%;
+  font-weight: 400;
+  color: var(--text-secondary-color);
+}
+
+.close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  margin-left: auto;
+  transition: opacity 0.2s;
+  width: 30px;
+  height: 30px;
+  svg path {
+    stroke: var(--text-secondary-color);
+  }
+}
+
+.icon {
+  display: block;
+
+  width: 24px;
+  height: 24px;
+}
+
+.alert-close:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .alert {
+    max-width: 351px;
+    max-height: 84px;
+  }
+
+  .icon {
+    display: block;
+    path {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './LinkComponent.module.scss';
-import { icons } from '../Switcher/icons';
 
+import { icons } from '../Link/icons';
 const getIcon = (iconName) =>
   icons[`../../assets/svg/icons/${iconName}.svg`] || null;
 

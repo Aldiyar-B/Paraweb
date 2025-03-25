@@ -9,6 +9,7 @@ import Switcher from '../components/Switcher/Switcher';
 import Toggle from '../components/Toggle/Toggle';
 import Pagination from '../components/Pagination/Pagination';
 import LinkComponent from '../components/Link/LinkComponent';
+import Alert from '../components/Alert/Alert';
 
 const breadcrumbItems = [
   { label: 'Главная', path: '/', disabled: false },
@@ -25,7 +26,14 @@ function Test() {
   const [activeTab, setActiveTab] = useState('Tab 1');
   const [isActive, setIsActive] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isAlertVisible, setIsAlertVisible] = useState(false);
 
+  const closeAlert = () => {
+    setIsAlertVisible(false);
+  };
+  const openAlert = () => {
+    setIsAlertVisible(true);
+  };
   return (
     <div
       style={{ marginTop: '50px', height: '100vh', marginBottom: '500px' }}
@@ -199,6 +207,23 @@ function Test() {
         <LinkComponent size="large" type="social" icon="social-vk" href="#">
           Hello World
         </LinkComponent>
+      </div>
+      {/* Alert */}
+      <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+        {/* Кнопка для вызова алерта */}
+        <button onClick={openAlert} className="text-button">
+          Показать Alert
+        </button>
+
+        {/* Отображаем Alert только если alertVisible === true */}
+        {isAlertVisible && (
+          <Alert
+            type="error"
+            title="Успешно"
+            message="Вы участвуете в мероприятии"
+            onClose={closeAlert}
+          />
+        )}
       </div>
     </div>
   );
