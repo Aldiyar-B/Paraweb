@@ -1,3 +1,6 @@
+@use '../../style/utils/typography.scss' as *;
+@use '../../style/global/breakpoints.scss' as *;
+
 .pagination {
   display: flex;
   gap: 8px;
@@ -18,7 +21,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
+  @include text-caption;
 
   &:hover:not(:disabled) {
     background: var(--gray-color-4);
@@ -51,4 +54,15 @@
   pointer-events: none;
   font-size: 16px;
   color: gray;
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    gap: 4px;
+  }
+
+  .button {
+    width: 36px;
+    height: 36px;
+  }
 }
