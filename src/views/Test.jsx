@@ -10,6 +10,8 @@ import Toggle from '../components/Toggle/Toggle';
 import Pagination from '../components/Pagination/Pagination';
 import LinkComponent from '../components/Link/LinkComponent';
 import Alert from '../components/Alert/Alert';
+import ImagePlaceholder from '../components/ImagePlaceholder/ImagePlaceholder';
+import imageSrc from '../assets/images/image.png';
 
 const breadcrumbItems = [
   { label: 'Главная', path: '/', disabled: false },
@@ -224,6 +226,16 @@ function Test() {
             onClose={closeAlert}
           />
         )}
+      </div>
+      {/* ImagePlaceholder */}
+      <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+        <h2>IMAGE-PLACEHOLDER</h2>
+        <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+          <ImagePlaceholder src={imageSrc} size="rating-card" />
+          <ImagePlaceholder src={imageSrc} size="profile" />
+          <ImagePlaceholder src={imageSrc} size="menu" />
+          <ImagePlaceholder src={imageSrc} size="rating-list" />
+        </div>
       </div>
     </div>
   );
