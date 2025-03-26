@@ -1,15 +1,9 @@
 import React from 'react';
 import styles from './Button.module.scss';
-
-// Загружаем все SVG-иконки в объект (автоматическая подгрузка)
-const icons = import.meta.glob('../../assets/svg/icons/*.svg', {
-  eager: true,
-  as: 'raw',
-});
+import { icons } from '../Button/icons';
 
 const Button = ({
   text,
-  state = 'default',
   name = 'primary',
   size = 'medium',
   showIconLeft = false,
@@ -19,13 +13,13 @@ const Button = ({
   onClick,
   disabled = false,
 }) => {
-  // Получаем содержимое SVG как строку (инлайн-код)
+  // Получаем содержимое SVG как строку
   const getIcon = (iconName) =>
     icons[`../../assets/svg/icons/${iconName}.svg`] || null;
 
   return (
     <button
-      className={`${styles.button} ${styles[name]} ${styles[size]} ${styles[state]} ${disabled ? styles.disabled : ''}`}
+      className={`${styles.button} ${styles[name]} ${styles[size]} ${disabled ? styles.disabled : ''}`}
       onClick={!disabled ? onClick : undefined}
       disabled={disabled}
     >

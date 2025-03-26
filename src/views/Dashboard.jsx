@@ -48,15 +48,23 @@ function Dashboard() {
         <Button
           iconLeft="pencil"
           showIconLeft="true"
-          name="icon"
+          name="icon-fill"
           size="small"
         />
         <br />
         <Button
           iconLeft="pencil"
           showIconLeft="true"
-          name="icon-fill"
+          name="icon"
           size="small"
+        />
+        <br />
+
+        <Button
+          iconLeft="pencil"
+          showIconLeft="true"
+          name="icon"
+          size="large"
         />
         <br />
         <Button iconLeft="user" showIconLeft="true" name="user" size="small" />
@@ -105,18 +113,29 @@ function Dashboard() {
           name="text"
           size="small"
         />
-        <Button
-          iconLeft="pencil"
-          showIconLeft="true"
-          name="icon"
-          size="small"
-        />
         <br />
         <Button
           iconLeft="pencil"
           showIconLeft="true"
           name="icon-fill"
           size="small"
+          disabled
+        />
+        <br />
+        <Button
+          iconLeft="pencil"
+          showIconLeft="true"
+          name="icon"
+          size="small"
+          disabled
+        />
+        <br />
+        <Button
+          iconLeft="pencil"
+          showIconLeft="true"
+          name="icon"
+          size="large"
+          disabled
         />
       </div>
     </div>

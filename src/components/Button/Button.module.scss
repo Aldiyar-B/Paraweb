@@ -7,9 +7,16 @@
   transition: background 0.3s ease;
   border: none;
   cursor: pointer;
+
   span {
     font-size: 16px;
     line-height: 20px;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.6; // или любые другие стили для disabled состояния
   }
 
   &.primary {
@@ -25,15 +32,6 @@
     }
 
     &.disabled {
-      cursor: not-allowed;
-      background-color: var(--gray-color-2);
-      color: var(--text-blind-color);
-      pointer-events: none;
-    }
-
-    &.disabled {
-      cursor: not-allowed;
-      pointer-events: none;
       background-color: var(--gray-color-2);
       color: var(--text-blind-color);
     }
@@ -53,8 +51,6 @@
     }
 
     &.disabled {
-      cursor: not-allowed;
-      pointer-events: none;
       background-color: var(--gray-color-2);
       color: var(--text-blind-color);
       border: 1px solid var(--text-blind-color);
@@ -88,8 +84,6 @@
     }
 
     &.disabled {
-      cursor: not-allowed;
-      pointer-events: none;
       color: var(--text-blind-color);
     }
   }
@@ -104,14 +98,12 @@
       svg {
         width: 100%;
         height: 100%;
-
         path {
           stroke: var(--text-secondary-color);
         }
       }
     }
 
-    // Hover и Active для обычного состояния
     &:hover {
       .icon svg path {
         stroke: var(--ultramarine-default-color);
@@ -125,10 +117,25 @@
     }
 
     &.disabled {
-      cursor: not-allowed;
-      pointer-events: none;
       .icon svg path {
         stroke: var(--text-blind-color);
+      }
+    }
+
+    &.large {
+      width: 40px;
+      height: 40px;
+      &:hover {
+        background-color: var(--gray-color-4);
+        .icon svg path {
+          stroke: var(--text-secondary-color);
+        }
+      }
+      &:active {
+        background-color: var(--gray-color-5);
+      }
+      .icon svg path {
+        stroke: var(--text-secondary-color);
       }
     }
   }
@@ -149,7 +156,6 @@
       svg {
         width: 100%;
         height: 100%;
-
         path {
           stroke: var(--text-secondary-color);
         }
@@ -158,7 +164,6 @@
 
     &:hover {
       background-color: var(--gray-color-3);
-
       .icon svg path {
         stroke: var(--ultramarine-default-color);
       }
@@ -166,16 +171,15 @@
 
     &:active {
       background-color: var(--gray-color-4);
-
       .icon svg path {
         stroke: var(--ultramarine-default-color);
       }
     }
     &.disabled {
-      cursor: not-allowed;
       background-color: var(--gray-color-2);
-      color: var(--text-blind-color);
-      pointer-events: none;
+      .icon svg path {
+        stroke: var(--text-blind-color);
+      }
     }
   }
 
@@ -195,18 +199,8 @@
     svg {
       width: 100%;
       height: 100%;
-
       path {
         stroke: currentColor;
-      }
-    }
-
-    &.disabled {
-      cursor: not-allowed;
-      pointer-events: none;
-
-      svg path {
-        stroke: var(--text-blind-color);
       }
     }
   }
