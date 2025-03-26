@@ -69,7 +69,37 @@ function Dashboard() {
         <br />
         <Button iconLeft="user" showIconLeft="true" name="user" size="small" />
         <br />
+        <Button name="share" text="Поделиться" iconLeft="share-button" />
+        <br />
       </Link>
+      <div style={{ marginTop: '20px', background: '#4132dc' }}>
+        <br />
+        <Button
+          name="primary"
+          bg="contrast"
+          text="Выйти"
+          iconLeft="pencil"
+          iconRight="plus"
+          showIconLeft="true"
+          showIconRight="true"
+        />
+        <br />
+        <Button
+          iconLeft="pencil"
+          showIconLeft="true"
+          name="icon"
+          size="large"
+          bg="contrast"
+        />
+        <br />
+        <Button
+          iconLeft="pencil"
+          showIconLeft="true"
+          name="bookmark"
+          bg="contrast"
+        />
+        <br />
+      </div>
       <div>
         <h3>disabled кнопки </h3>
         <br />
@@ -137,6 +167,53 @@ function Dashboard() {
           size="large"
           disabled
         />
+        <br />
+        <Button
+          iconLeft="user"
+          showIconLeft="true"
+          name="user"
+          size="large"
+          disabled
+        />
+        <br />
+        <Button name="share" text="Поделиться" iconLeft="share" disabled />
+        <br />
+        <Button
+          name="share"
+          text="Поделиться"
+          iconLeft="share-button"
+          disabled
+        />
+        <div style={{ marginTop: '20px', background: '#4132dc' }}>
+          <br />
+          <Button
+            name="primary"
+            bg="contrast"
+            text="Выйти"
+            iconLeft="pencil"
+            iconRight="plus"
+            showIconLeft="true"
+            showIconRight="true"
+            disabled
+          />
+          <br />
+          <Button
+            iconLeft="pencil"
+            showIconLeft="true"
+            name="icon"
+            size="large"
+            bg="contrast"
+            disabled
+          />
+          <br />
+          <Button
+            iconLeft="pencil"
+            showIconLeft="true"
+            name="bookmark"
+            bg="contrast"
+            disabled
+          />
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,8 @@
 html {
   --white: #ffffff;
+  --white-20: rgba(255, 255, 255, 0.2);
+  --white-40: rgba(255, 255, 255, 0.4);
+  --white-60: rgba(255, 255, 255, 0.6);
 
   --card-color: #ffffff;
   --app-bg: #eeeff2;
@@ -10,14 +13,18 @@ html {
   --gray-color-3: #ecedf2;
   --gray-color-4: #e3e5ec;
   --gray-color-5: #d8dbe4;
+  --gray-color-6: #f1f4f9;
 
   //* Text
+  --text-2-color: #80889d;
   --text-color: #1f2733;
   --text-secondary-color: #95a0b2;
   --text-contrast-color: #ffffff;
   --text-contrast-secondary-color: #ffffff99;
+  --text-contrast-secondary-color-60: rgba(255, 255, 255, 0.6);
   --text-blind-color: #ced5e0;
   --text-contrast-blind-color: #ffffff4d;
+  --text-contrast-blind-color-30: rgba(255, 255, 255, 0.3);
 
   //* Divider
   --divider-color: #eeeff2;

@@ -1,7 +1,7 @@
+@use './global/base.scss' as *;
 @use './global/typography.scss' as *;
 @use './global/colors.scss' as *;
 @import './reset.css';
-
 * {
   box-sizing: border-box;
 }

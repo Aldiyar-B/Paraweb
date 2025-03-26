@@ -8,8 +8,9 @@ const Button = ({
   size = 'medium',
   showIconLeft = false,
   showIconRight = false,
-  iconLeft = 'pencil',
-  iconRight = 'plus',
+  iconLeft = 'user',
+  iconRight = '',
+  bg = 'primary',
   onClick,
   disabled = false,
 }) => {
@@ -19,22 +20,26 @@ const Button = ({
 
   return (
     <button
-      className={`${styles.button} ${styles[name]} ${styles[size]} ${disabled ? styles.disabled : ''}`}
+      className={`${styles.button} 
+              ${name === 'user' ? styles.userWrapper : ''} 
+              ${name === 'share' ? styles.shareWrapper : ''} 
+              ${styles[name]} 
+              ${styles[size]}
+              ${styles[bg]} 
+              ${disabled ? styles.disabled : ''}`}
       onClick={!disabled ? onClick : undefined}
       disabled={disabled}
     >
-      {name === 'user' ? (
-        // Специфичная структура для кнопки с name="user"
+      {name === 'user' || name === 'share' ? (
+        // Специфичная структура для user и share
         <>
-          <span className={styles.userIcon}>
-            {getIcon(iconLeft) && (
-              <span
-                className={styles.icon}
-                dangerouslySetInnerHTML={{ __html: getIcon(iconLeft) }}
-              />
-            )}
-          </span>
-          <span className={styles.userText}>{text}</span>
+          {getIcon(iconLeft) && (
+            <span
+              className={styles.icon}
+              dangerouslySetInnerHTML={{ __html: getIcon(iconLeft) }}
+            />
+          )}
+          {name === 'share' && <span>{text}</span>}
         </>
       ) : (
         // Стандартная структура для остальных кнопок
