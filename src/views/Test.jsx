@@ -12,7 +12,7 @@ import LinkComponent from '../components/Link/LinkComponent';
 import Alert from '../components/Alert/Alert';
 import ImagePlaceholder from '../components/ImagePlaceholder/ImagePlaceholder';
 import imageSrc from '../assets/images/image.png';
-
+import Button from '../components/Button/Button';
 const breadcrumbItems = [
   { label: 'Главная', path: '/', disabled: false },
   { label: 'Категории', path: '/categories', disabled: true },
@@ -99,12 +99,7 @@ function Test() {
         {/* <Tag label="Английский" subtitle="B1" color="purple" /> */}
         <Tag label="Математика" color="blue" />
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+
       {/* Breadcrumbs */}
       <div style={{ display: 'flex ', justifyContent: 'space-evenly' }}>
         <h3 className="text-h3">Breadcrumbs</h3>
@@ -241,6 +236,223 @@ function Test() {
           <ImagePlaceholder src={imageSrc} size="profile" />
           <ImagePlaceholder src={imageSrc} size="menu" />
           <ImagePlaceholder src={imageSrc} size="rating-list" />
+        </div>
+      </div>
+      {/* Button */}
+      <div style={{}}>
+        <Link to="/">
+          {/* <button className="text-button">Выйти</button> */}
+          <Button
+            text="Выйти"
+            iconLeft="pencil"
+            iconRight="plus"
+            showIconLeft="true"
+            showIconRight="true"
+            name="primary"
+          />
+          <br />
+          <Button
+            text="Выйти"
+            iconLeft="pencil"
+            iconRight="plus"
+            showIconLeft="true"
+            showIconRight="true"
+            name="secondary"
+          />
+          <br />
+          <Button
+            text="Выйти"
+            iconLeft="pencil"
+            iconRight="plus"
+            showIconLeft="true"
+            showIconRight="true"
+            name="text"
+          />
+          <br />
+          <Button
+            text="Выйти"
+            iconLeft="pencil"
+            iconRight="plus"
+            showIconLeft="true"
+            showIconRight="true"
+            name="text"
+            size="small"
+          />
+          <br />
+          <Button
+            iconLeft="pencil"
+            showIconLeft="true"
+            name="icon-fill"
+            size="small"
+          />
+          <br />
+          <Button
+            iconLeft="pencil"
+            showIconLeft="true"
+            name="icon"
+            size="small"
+          />
+          <br />
+
+          <Button
+            iconLeft="pencil"
+            showIconLeft="true"
+            name="icon"
+            size="large"
+          />
+          <br />
+          <Button
+            iconLeft="user"
+            showIconLeft="true"
+            name="user"
+            size="small"
+          />
+          <br />
+          <Button name="share" text="Поделиться" iconLeft="share-button" />
+          <br />
+        </Link>
+        <div style={{ marginTop: '20px', background: '#4132dc' }}>
+          <br />
+          <Button
+            name="primary"
+            bg="contrast"
+            text="Выйти"
+            iconLeft="pencil"
+            iconRight="plus"
+            showIconLeft="true"
+            showIconRight="true"
+          />
+          <br />
+          <Button
+            iconLeft="pencil"
+            showIconLeft="true"
+            name="icon"
+            size="large"
+            bg="contrast"
+          />
+          <br />
+          <Button
+            iconLeft="pencil"
+            showIconLeft="true"
+            name="bookmark"
+            bg="contrast"
+          />
+          <br />
+        </div>
+        <div>
+          <h3>disabled кнопки </h3>
+          <br />
+          <Button
+            text="Выйти"
+            disabled
+            iconLeft="pencil"
+            iconRight="plus"
+            showIconLeft="true"
+            showIconRight="true"
+            name="primary"
+          />
+          <br />
+          <Button
+            text="Выйти"
+            disabled
+            iconLeft="pencil"
+            iconRight="plus"
+            showIconLeft="true"
+            showIconRight="true"
+            name="secondary"
+          />
+          <br />
+          <Button
+            text="Выйти"
+            disabled
+            iconLeft="pencil"
+            iconRight="plus"
+            showIconLeft="true"
+            showIconRight="true"
+            name="text"
+          />
+          <br />
+          <Button
+            text="Выйти"
+            disabled
+            iconLeft="pencil"
+            iconRight="plus"
+            showIconLeft="true"
+            showIconRight="true"
+            name="text"
+            size="small"
+          />
+          <br />
+          <Button
+            iconLeft="pencil"
+            showIconLeft="true"
+            name="icon-fill"
+            size="small"
+            disabled
+          />
+          <br />
+          <Button
+            iconLeft="pencil"
+            showIconLeft="true"
+            name="icon"
+            size="small"
+            disabled
+          />
+          <br />
+          <Button
+            iconLeft="pencil"
+            showIconLeft="true"
+            name="icon"
+            size="large"
+            disabled
+          />
+          <br />
+          <Button
+            iconLeft="user"
+            showIconLeft="true"
+            name="user"
+            size="large"
+            disabled
+          />
+          <br />
+          <Button name="share" text="Поделиться" iconLeft="share" disabled />
+          <br />
+          <Button
+            name="share"
+            text="Поделиться"
+            iconLeft="share-button"
+            disabled
+          />
+          <div style={{ marginTop: '20px', background: '#4132dc' }}>
+            <br />
+            <Button
+              name="primary"
+              bg="contrast"
+              text="Выйти"
+              iconLeft="pencil"
+              iconRight="plus"
+              showIconLeft="true"
+              showIconRight="true"
+              disabled
+            />
+            <br />
+            <Button
+              iconLeft="pencil"
+              showIconLeft="true"
+              name="icon"
+              size="large"
+              bg="contrast"
+              disabled
+            />
+            <br />
+            <Button
+              iconLeft="pencil"
+              showIconLeft="true"
+              name="bookmark"
+              bg="contrast"
+              disabled
+            />
+          </div>
         </div>
       </div>
     </div>
