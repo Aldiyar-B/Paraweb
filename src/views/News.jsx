@@ -5,6 +5,7 @@ import CommunitiesCard from '../style/components/СommunitiesСard/Сommunities�
 import personAvatar from '../assets/images/person.png';
 import DocumentCard from '../style/components/DocumentCard/DocumentCard';
 import LevelCard from '../style/components/LevelCard/LevelCard';
+import ProductCard from '../style/components/ProductCard/ProductCard';
 
 const event = {
   date: '30',
@@ -78,6 +79,24 @@ function News() {
           isIcon={true}
           icon="coin-icon"
           disabled
+        />
+      </div>
+      {/* Новый блок с ProductCard */}
+      <div
+        style={{
+          display: 'flex',
+          gap: '20px',
+          padding: '20px',
+          flexWrap: 'wrap',
+        }}
+      >
+        <ProductCard
+          image="../src/assets/images/robot.png"
+          title="Наименование приза"
+          isIcon={true}
+          icon="coin-icon"
+          description="100"
+          buttonText="Получить"
         />
       </div>
     </div>
