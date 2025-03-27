@@ -6,6 +6,7 @@ import personAvatar from '../assets/images/person.png';
 import DocumentCard from '../style/components/DocumentCard/DocumentCard';
 import LevelCard from '../style/components/LevelCard/LevelCard';
 import ProductCard from '../style/components/ProductCard/ProductCard';
+import PartnerCard from '../style/components/PartnerCard/PartnerCard';
 
 const event = {
   date: '30',
@@ -25,6 +26,14 @@ const сommunities = {
   name: 'Константинопольский Константин Константинович',
   role: 'Ответственный',
   avatar: personAvatar,
+};
+
+const partner = {
+  name: 'Название партнёра',
+  link: 'link.ru',
+  contactName: 'Константинопольский Константин Константинович',
+  phone: '+7 (812) 710-64-82',
+  email: 'wsr@guap.ru',
 };
 function News() {
   return (
@@ -81,7 +90,6 @@ function News() {
           disabled
         />
       </div>
-      {/* Новый блок с ProductCard */}
       <div
         style={{
           display: 'flex',
@@ -98,6 +106,16 @@ function News() {
           description="100"
           buttonText="Получить"
         />
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          gap: '20px',
+          padding: '20px',
+          flexWrap: 'wrap',
+        }}
+      >
+        <PartnerCard {...partner} />
       </div>
     </div>
   );
