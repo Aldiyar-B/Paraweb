@@ -3,6 +3,7 @@ import '../style/main.scss';
 import { EventCard } from '../style/components/EventCard/EventCard';
 import CommunitiesCard from '../style/components/СommunitiesСard/СommunitiesСard';
 import personAvatar from '../assets/images/person.png';
+import DocumentCard from '../style/components/DocumentCard/DocumentCard';
 
 const event = {
   date: '30',
@@ -46,6 +47,13 @@ function News() {
       <br />
       <br />
       <CommunitiesCard {...сommunities} />
+      <br />
+      <br />
+      <br />
+      <div style={{ display: 'flex', gap: '20px', padding: '20px' }}>
+        <DocumentCard title="Headline" fileSize="99.9 KB" fileType="PDF" />
+        <DocumentCard title="Report 2024" fileSize="1.2 MB" fileType="DOCX" />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,62 @@
+@use '../../global/breakpoints.scss' as *;
+@use '../../utils//typography.scss' as *;
+
+.document-card {
+  background: var(--card-color);
+  width: 74rem;
+  height: 13.2rem;
+  border-radius: 3.2rem;
+  padding: 2.4rem;
+  transition:
+    background 0.3s ease-in-out,
+    transform 0.2s ease-in-out;
+  cursor: pointer;
+
+  @include mobile {
+    width: 35rem;
+    height: 11rem;
+  }
+
+  &:hover {
+    background: var(--ultramarine-default-color);
+    color: var(--ultramarine-light-color-2);
+
+    .document-card__title,
+    .document-card__info {
+      color: var(--text-contrast-color);
+    }
+
+    svg path {
+      stroke: var(--ultramarine-light-color-2);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 1.2rem;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__icon {
+    font-size: 2rem;
+  }
+
+  &__info {
+    font-size: 1.4rem;
+    color: var(--text-2-color);
+  }
+}
