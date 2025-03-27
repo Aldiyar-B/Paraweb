@@ -19,9 +19,14 @@ const ToggleInput = ({ type, defaultChecked = false, disabled, name }) => {
         checked={checked}
         disabled={disabled}
         onChange={handleChange}
+        className={styles.toggle__input}
       />
       <span
-        className={type === 'checkbox' ? styles.checkbox : styles.radiobutton}
+        className={
+          type === 'checkbox'
+            ? styles.toggle__checkbox
+            : styles.toggle__radiobutton
+        }
       ></span>
     </label>
   );
@@ -31,7 +36,7 @@ ToggleInput.propTypes = {
   type: PropTypes.oneOf(['checkbox', 'radiobutton']).isRequired,
   defaultChecked: PropTypes.bool,
   disabled: PropTypes.bool,
-  name: PropTypes.string, // Только для радиокнопки
+  name: PropTypes.string,
 };
 
 export default ToggleInput;

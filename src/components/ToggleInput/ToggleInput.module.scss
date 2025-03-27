@@ -1,111 +1,115 @@
+@use '../../style/utils/typography.scss' as *;
+@use '../../style/global/breakpoints.scss' as *;
+
 .toggle {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
 
-  input {
+  &__input {
     display: none;
   }
-}
 
-// Общие стили
-.checkbox,
-.radiobutton {
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--border-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
-  &:hover {
-    border: 2px solid var(--ultramarine-dark-color);
+  // Общие стили для чекбокса и радиокнопки
+  &__checkbox,
+  &__radiobutton {
+    width: 2rem;
+    height: 2rem;
+    border: 0.2rem solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+
+    &:hover {
+      border-color: var(--ultramarine-dark-color);
+    }
   }
-}
 
-// Чекбокс
-.checkbox {
-  border-radius: 6px;
-}
-input:checked + .checkbox {
-  background-color: var(--ultramarine-default-color);
-  color: var(--text-contrast-color);
-  border: none;
-  &:hover {
+  // Чекбокс
+  &__checkbox {
+    border-radius: 0.6rem;
+  }
+
+  &__input:checked + &__checkbox {
+    background-color: var(--ultramarine-default-color);
+    border: none;
+
+    &:hover {
+      background-color: var(--ultramarine-dark-color);
+    }
+  }
+
+  &__input:checked + &__checkbox::after {
+    content: '';
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: var(--text-contrast-color);
+    mask-image: url('../../assets/svg/icons/check.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    position: absolute;
+  }
+
+  // Радиокнопка
+  &__radiobutton {
+    border-radius: 50%;
+  }
+
+  &__input:checked + &__radiobutton {
+    background-color: var(--text-contrast-color);
+    border-color: var(--ultramarine-default-color);
+  }
+
+  &__input:checked + &__radiobutton::after {
+    content: '';
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: var(--ultramarine-default-color);
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  &__input:checked + &__radiobutton:hover {
+    border-color: var(--ultramarine-dark-color);
+  }
+
+  &__input:checked + &__radiobutton:hover::after {
     background-color: var(--ultramarine-dark-color);
   }
-}
 
-input:checked + .checkbox::after {
-  content: '';
-  width: 16px;
-  height: 16px;
-  background-color: var(--text-contrast-color);
-  mask-image: url('../../assets/svg/icons/check.svg');
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  position: absolute;
-}
-
-// Радиокнопка
-.radiobutton {
-  border-radius: 50%;
-}
-input:checked + .radiobutton {
-  background-color: var(--text-contrast-color);
-  border-color: var(--ultramarine-default-color);
-}
-
-input:checked + .radiobutton::after {
-  content: '';
-  width: 12px;
-  height: 12px;
-  background-color: var(--ultramarine-default-color);
-  border-radius: 50%;
-  position: absolute;
-}
-input:checked + .radiobutton:hover {
-  border-color: var(--ultramarine-dark-color);
-}
-input:checked + .radiobutton:hover::after {
-  background-color: var(--ultramarine-dark-color);
-}
-
-//! disabled
-input:disabled + .checkbox,
-input:disabled + .radiobutton {
-  opacity: 0.5;
-  background-color: var(--gray-color-3);
-  border: 2px solid var(--border-color);
-}
-
-// Галочка и точка внутри тоже серые
-input:disabled:checked + .checkbox::after,
-input:disabled:checked + .radiobutton::after {
-  background-color: var(--border-color);
-}
-
-input:disabled + .checkbox,
-input:disabled + .radiobutton {
-  pointer-events: none; // Полностью отключаем hover и клики
-}
-
-//* Адаптацив под мобильные устройства
-@media (max-width: 768px) {
-  .checkbox,
-  .radiobutton {
-    width: 16px;
-    height: 16px;
-    border-width: 1px;
+  // Состояние disabled
+  &__input:disabled + &__checkbox,
+  &__input:disabled + &__radiobutton {
+    opacity: 0.5;
+    background-color: var(--gray-color-3);
+    border: 0.2rem solid var(--border-color);
+    pointer-events: none;
   }
 
-  input:checked + .checkbox::after {
-    width: 15px;
-    height: 15px;
+  &__input:disabled:checked + &__checkbox::after,
+  &__input:disabled:checked + &__radiobutton::after {
+    background-color: var(--border-color);
   }
 
-  input:checked + .radiobutton::after {
-    width: 8px;
-    height: 8px;
+  // Адаптация под мобильные устройства
+  @media (max-width: 768px) {
+    &__checkbox,
+    &__radiobutton {
+      width: 1.6rem;
+      height: 1.6rem;
+      border-width: 0.1rem;
+    }
+
+    &__input:checked + &__checkbox::after {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    &__input:checked + &__radiobutton::after {
+      width: 0.8rem;
+      height: 0.8rem;
+    }
   }
 }
