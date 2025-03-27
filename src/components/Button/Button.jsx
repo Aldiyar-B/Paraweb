@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Button.module.scss';
-import { icons } from '../Button/icons';
+import { icons } from '../icons';
 
 const Button = ({
   text,
@@ -16,7 +16,7 @@ const Button = ({
 }) => {
   // Получаем содержимое SVG как строку
   const getIcon = (iconName) =>
-    icons[`../../assets/svg/icons/${iconName}.svg`] || null;
+    icons[`../assets/svg/icons/${iconName}.svg`] || null;
 
   return (
     <button

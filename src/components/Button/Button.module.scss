@@ -36,7 +36,6 @@
     }
 
     &.disabled {
-      background-color: var(--gray-color-2);
       color: var(--text-blind-color);
     }
     @include mobile {
@@ -260,9 +259,11 @@
   }
 
   &.icon-fill {
+    width: 2.8rem;
+    height: 2.8rem;
     gap: 0;
-    border-radius: 1.2rem;
-    padding: 0.8rem;
+    border-radius: 0.8rem;
+    padding: 0.4rem;
     background-color: var(--gray-color-2);
     display: flex;
     align-items: center;
