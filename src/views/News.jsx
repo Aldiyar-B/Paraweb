@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import '../style/main.scss';
 import { EventCard } from '../style/components/EventCard/EventCard';
+import CommunitiesCard from '../style/components/СommunitiesСard/СommunitiesСard';
+import personAvatar from '../assets/images/person.png';
+
 const event = {
   date: '30',
   month: 'ноя',
@@ -11,9 +14,18 @@ const event = {
   attendees: 500,
   rating: 100,
 };
+
+const сommunities = {
+  date: '30',
+  month: 'ноя',
+  title: 'Название мероприятия',
+  name: 'Константинопольский Константин Константинович',
+  role: 'Ответственный',
+  avatar: personAvatar,
+};
 function News() {
   return (
-    <div style={{ background: '#eeeff2', height: '100vh' }}>
+    <div style={{ background: '#eeeff2', height: '100%' }}>
       <h1 className="text-h1">News</h1>
       <h4 className="text-h4">Это публичная страница</h4>
       <nav>
@@ -30,6 +42,10 @@ function News() {
         </Link>
       </nav>
       <EventCard {...event} />
+      <br />
+      <br />
+      <br />
+      <CommunitiesCard {...сommunities} />
     </div>
   );
 }
