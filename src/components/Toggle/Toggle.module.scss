@@ -1,92 +1,112 @@
+@use '../../style/global/breakpoints.scss' as *;
+
 .toggle {
   display: flex;
   align-items: center;
   cursor: pointer;
   position: relative;
-  width: 42px; /* Начальная ширина */
-  height: 20px; /* Начальная высота */
+  width: 4.2rem;
+  height: 2rem;
   background-color: transparent;
-  border-radius: 15px;
+  border-radius: 1.5rem;
   transition: background-color 0.3s ease;
-  border: 1px solid var(--border-color);
-
-  input {
+  border: 0.1rem solid var(--border-color);
+  @include mobile {
+    width: 3.4rem;
+    height: 1.6rem;
+  }
+  &__input {
     display: none;
   }
 
-  .slider {
+  &__slider {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     height: 100%;
     position: relative;
-    padding: 5px;
+    padding: 0.5rem;
   }
 
-  .indicator {
+  &__indicator {
     position: absolute;
-    left: 3px;
-    width: 12px; /* Начальная ширина индикатора */
-    height: 12px; /* Начальная высота индикатора */
+    left: 0.3rem;
+    width: 1.2rem;
+    height: 1.2rem;
     background-color: var(--text-blind-color);
     border-radius: 50%;
     transition: transform 0.3s ease-in-out;
+    @include mobile {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 
-  .icon {
+  &__icon {
     svg {
       position: absolute;
-      top: 0.4rem;
+      top: 0rem;
       left: 0.1rem;
-      width: 18px;
-      height: 18px;
+      width: 1.8rem;
+      height: 1.8rem;
+      @include mobile {
+        width: 1.4rem;
+        height: 1.4rem;
+      }
     }
+
     svg path {
       stroke: var(--text-contrast-color);
     }
   }
 
-  /* Состояние активного переключателя */
-  &.active {
+  &--active {
     background-color: var(--ultramarine-default-color);
-    border: 1px solid var(--ultramarine-default-color);
+    border: 0.1rem solid var(--ultramarine-default-color);
 
     &:hover {
       background-color: var(--ultramarine-dark-color);
-      border: 1px solid var(--ultramarine-dark-color);
+      border: 0.1rem solid var(--ultramarine-dark-color);
     }
 
-    .indicator {
-      transform: translateX(25px);
+    .toggle__indicator {
+      transform: translateX(2.3rem);
       background-color: var(--text-contrast-color);
+    }
+
+    @include mobile {
+      .toggle__indicator {
+        transform: translateX(1.8rem);
+        background-color: var(--text-contrast-color);
+      }
     }
 
     &:active {
       background-color: var(--ultramarine-light-color-1);
-      border: 1px solid var(--ultramarine-light-color-1);
+      border: 0.1rem solid var(--ultramarine-light-color-1);
     }
   }
 
-  /* Состояние неактивного переключателя */
-  &:not(.active) {
+  &:not(.toggle--active) {
     &:hover {
-      border: 1px solid var(--ultramarine-default-color);
-      .indicator {
+      border: 0.1rem solid var(--ultramarine-default-color);
+
+      .toggle__indicator {
         background-color: var(--ultramarine-default-color);
       }
     }
 
     &:active {
-      border: 1px solid var(--ultramarine-light-color-1);
-      .indicator {
+      border: 0.1rem solid var(--ultramarine-light-color-1);
+
+      .toggle__indicator {
         background-color: var(--ultramarine-light-color-1);
       }
     }
   }
 
-  /* Состояние для disabled */
-  &.disabled {
+  &--disabled {
     opacity: 0.5;
     cursor: not-allowed;
     background-color: var(--gray-color-2);
@@ -95,42 +115,23 @@
     &:hover,
     &:active {
       border: none;
-      .indicator {
+
+      .toggle__indicator {
         background-color: var(--text-blind-color);
       }
     }
 
-    &.active {
+    &.toggle--active {
       background-color: var(--gray-color-2);
-      .indicator {
+
+      .toggle__indicator {
         background-color: var(--text-blind-color);
       }
 
-      .icon {
+      .toggle__icon {
         svg path {
           stroke: var(--text-blind-color);
         }
-      }
-    }
-  }
-}
-
-/* Мобильные стили для экранов до 768px */
-@media (max-width: 768px) {
-  .toggle {
-    width: 34px; /* Размер переключателя */
-    height: 16px; /* Размер переключателя */
-
-    &.active {
-      .indicator {
-        transform: translateX(16px);
-      }
-    }
-
-    .icon {
-      svg {
-        width: 14px; /* Уменьшение иконки */
-        height: 14px; /* Уменьшение иконки */
       }
     }
   }

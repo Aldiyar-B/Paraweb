@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Toggle.module.scss';
-import { icons } from './icons';
+import { icons } from '../icons';
 
 const Toggle = ({ initialState = false, onChange, disabled }) => {
   const [isChecked, setIsChecked] = useState(initialState);
-  const leftIcon = 'check'; // Теперь всегда "check"
+  const leftIcon = 'check';
 
   const getIcon = (iconName) =>
-    icons[`../../assets/svg/icons/${iconName}.svg`] || null;
+    icons[`../assets/svg/icons/${iconName}.svg`] || null;
 
   const handleToggle = () => {
     if (!disabled) {
@@ -20,24 +20,24 @@ const Toggle = ({ initialState = false, onChange, disabled }) => {
 
   return (
     <label
-      className={`${styles.toggle} ${isChecked ? styles.active : ''} ${disabled ? styles.disabled : ''}`}
+      className={`${styles.toggle} ${
+        isChecked ? styles['toggle--active'] : ''
+      } ${disabled ? styles['toggle--disabled'] : ''}`}
     >
       <input
+        className={styles.toggle__input}
         type="checkbox"
         checked={isChecked}
         disabled={disabled}
         onChange={handleToggle}
       />
 
-      <span className={`${styles.slider} ${disabled ? styles.disabled : ''}`}>
+      <span className={styles.toggle__slider}>
         <span
-          className={styles.icon}
+          className={styles.toggle__icon}
           dangerouslySetInnerHTML={{ __html: getIcon(leftIcon) }}
         />
-        {/* Индикатор */}
-        <span
-          className={`${styles.indicator} ${disabled ? styles.disabled : ''}`}
-        ></span>
+        <span className={styles.toggle__indicator}></span>
       </span>
     </label>
   );

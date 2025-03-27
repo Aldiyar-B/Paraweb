@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styles from './Pagination.module.scss';
-import { icons } from '../Switcher/icons';
+import { icons } from '../icons';
 
 const getIcon = (iconName) =>
-  icons[`../../assets/svg/icons/${iconName}.svg`] || null;
+  icons[`../assets/svg/icons/${iconName}.svg`] || null;
 
 const Pagination = ({
   totalPages,

@@ -9,7 +9,6 @@ const Alert = ({ type = 'success', title, message, onClose }) => {
   const successIcon = 'check-circle';
   const errorIcon = 'alert-circle';
   const X = 'x';
-  console.log('X Icon:', getIcon('X'));
 
   return (
     <div className={`${styles.alert} ${styles[type]}`}>
