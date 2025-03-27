@@ -4,6 +4,7 @@ import { EventCard } from '../style/components/EventCard/EventCard';
 import CommunitiesCard from '../style/components/СommunitiesСard/СommunitiesСard';
 import personAvatar from '../assets/images/person.png';
 import DocumentCard from '../style/components/DocumentCard/DocumentCard';
+import LevelCard from '../style/components/LevelCard/LevelCard';
 
 const event = {
   date: '30',
@@ -53,6 +54,31 @@ function News() {
       <div style={{ display: 'flex', gap: '20px', padding: '20px' }}>
         <DocumentCard title="Headline" fileSize="99.9 KB" fileType="PDF" />
         <DocumentCard title="Report 2024" fileSize="1.2 MB" fileType="DOCX" />
+      </div>
+
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '20px',
+          padding: '20px',
+        }}
+      >
+        <LevelCard
+          image="../src/assets/images/robot.png"
+          title="Наименование уровня"
+          description=""
+          isIcon={true}
+          icon="check"
+        />
+        <LevelCard
+          image="../src/assets/images/robot-disabled.png"
+          title="Наименование уровня"
+          description="100"
+          isIcon={true}
+          icon="coin-icon"
+          disabled
+        />
       </div>
     </div>
   );
