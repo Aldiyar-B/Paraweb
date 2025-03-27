@@ -188,7 +188,13 @@ function Test() {
         />
       </div>
       {/* Link */}
-      <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
+        }}
+      >
         <LinkComponent size="small" type="text" href="#">
           Small Text Link
         </LinkComponent>

@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './LinkComponent.module.scss';
+import { icons } from '../icons';
 
-import { icons } from '../Link/icons';
 const getIcon = (iconName) =>
-  icons[`../../assets/svg/icons/${iconName}.svg`] || null;
+  icons[`../assets/svg/icons/${iconName}.svg`] || null;
 
 const LinkComponent = ({
   href,
@@ -14,10 +14,10 @@ const LinkComponent = ({
   disabled = false,
 }) => {
   return (
-    <span className={styles.linkWrapper}>
+    <span className={`${styles.link}  ${styles[`link--${size}`]}`}>
       {icon && getIcon(icon) && (
         <span
-          className={`${styles.icon} ${styles[type]}`}
+          className={`${styles.link__icon} ${styles[`link--${type}`]} ${styles[`link__icon--${size}`]}`}
           dangerouslySetInnerHTML={{ __html: getIcon(icon) }}
         />
       )}
@@ -25,7 +25,7 @@ const LinkComponent = ({
         href={disabled ? undefined : href}
         role={disabled ? 'link' : undefined}
         aria-disabled={disabled}
-        className={`${styles.link} ${styles[size]}  ${disabled ? styles.disabled : ''}`}
+        className={`${styles.link__element} ${disabled ? styles['link__element--disabled'] : ''}`}
       >
         {children && <span>{children}</span>}
       </a>
