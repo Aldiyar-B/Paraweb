@@ -11,16 +11,16 @@ const Breadcrumbs = ({ items }) => {
       {items.map((item, index) => (
         <span key={index} className={styles.breadcrumb}>
           {item.disabled ? (
-            <span className={styles.disabled}>{item.label}</span>
+            <span className={styles.breadcrumb__disabled}>{item.label}</span>
           ) : index < items.length - 1 ? (
-            <Link to={item.path} className={styles.link}>
+            <Link to={item.path} className={styles.breadcrumb__link}>
               {item.label}
             </Link>
           ) : (
-            <span className={styles.current}>{item.label}</span>
+            <span className={styles.breadcrumb__current}>{item.label}</span>
           )}
           {index < items.length - 1 && (
-            <span className={styles.separator}> • </span>
+            <span className={styles.breadcrumb__separator}> • </span>
           )}
         </span>
       ))}
