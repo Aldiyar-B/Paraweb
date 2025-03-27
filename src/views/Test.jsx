@@ -65,7 +65,7 @@ function Test() {
           <h2>С иконкой</h2>
           <Dropdown text="VK" socials="social-vk" />
           <Dropdown text="Telegram" socials="social-tg" />
-          <Dropdown text="Copy link" socials="share" />
+          <Dropdown text="Copy link" socials="share-button" />
         </div>
       </div>
 

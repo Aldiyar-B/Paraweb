@@ -1,25 +1,23 @@
 import React from 'react';
 import styles from './DropDown.module.scss';
-
-const icons = import.meta.glob('../../assets/svg/icons/*.svg', {
-  eager: true,
-  as: 'raw',
-});
+import { icons } from '../icons';
 
 const Dropdown = ({ text, checkbox = false, socials = null }) => {
   const getIcon = (iconName) =>
-    icons[`../../assets/svg/icons/${iconName}.svg`] || null;
+    icons[`../assets/svg/icons/${iconName}.svg`] || null;
 
   return (
     <div className={styles.dropdownItem}>
-      {checkbox && <input type="checkbox" className={styles.checkbox} />}
+      {checkbox && (
+        <input type="checkbox" className={styles['dropdownItem__checkbox']} />
+      )}
       {socials && getIcon(socials) && (
         <span
-          className={styles.icon}
+          className={styles['dropdownItem__icon']}
           dangerouslySetInnerHTML={{ __html: getIcon(socials) }}
         />
       )}
-      <span className={styles.text}>{text}</span>
+      <span className={styles['dropdownItem__text']}>{text}</span>
     </div>
   );
 };
