@@ -39,31 +39,41 @@ const Pagination = ({
   };
 
   return (
-    <nav className={`${styles.pagination} ${disabled ? styles.disabled : ''}`}>
+    <nav
+      className={`${styles.pagination} ${
+        disabled ? styles['pagination--disabled'] : ''
+      }`}
+    >
       <button
         onClick={() => changePage(currentPage - 1)}
         disabled={currentPage === 1 || disabled}
         aria-label="Previous page"
-        className={`${styles.button} ${disabled ? styles.disabledButton : ''}`}
+        className={`${styles['pagination__button']} ${
+          disabled ? styles['pagination__button--disabled'] : ''
+        }`}
       >
         <span
-          className={styles.icon}
+          className={styles['pagination__button--icon']}
           dangerouslySetInnerHTML={{ __html: getIcon('chevron-left') }}
         />
       </button>
 
       {getVisiblePages().map((page, index) =>
         page === '...' ? (
-          <span key={index} className={styles.dots} title="More pages">
+          <span
+            key={index}
+            className={styles.pagination__dots}
+            title="More pages"
+          >
             {page}
           </span>
         ) : (
           <button
             key={index}
             onClick={() => changePage(page)}
-            className={`${styles.button} ${currentPage === page ? styles.active : ''} ${
-              disabled ? styles.disabledButton : ''
-            }`}
+            className={`${styles['pagination__button']} ${
+              currentPage === page ? styles['pagination__button--active'] : ''
+            } ${disabled ? styles['pagination__button--disabled'] : ''}`}
             disabled={disabled}
           >
             {page}
@@ -75,10 +85,12 @@ const Pagination = ({
         onClick={() => changePage(currentPage + 1)}
         disabled={currentPage === totalPages || disabled}
         aria-label="Next page"
-        className={`${styles.button} ${disabled ? styles.disabledButton : ''}`}
+        className={`${styles['pagination__button']} ${
+          disabled ? styles['pagination__button--disabled'] : ''
+        }`}
       >
         <span
-          className={styles.icon}
+          className={styles['pagination__button--icon']}
           dangerouslySetInnerHTML={{ __html: getIcon('chevron-right') }}
         />
       </button>
