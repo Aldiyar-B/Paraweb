@@ -3,7 +3,7 @@ import styles from './ImagePlaceholder.module.scss';
 
 const ImagePlaceholder = ({ src, size = 'medium' }) => {
   return (
-    <div className={`${styles.placeholder} ${styles[size]}`}>
+    <div className={`${styles.placeholder} ${styles[`placeholder--${size}`]}`}>
       {src && <img src={src} alt="Placeholder" className={styles.image} />}
     </div>
   );
