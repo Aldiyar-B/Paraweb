@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Switcher.module.scss';
-import { icons } from './icons';
+import { icons } from '../icons';
 
 const getIcon = (iconName) =>
-  icons[`../../assets/svg/icons/${iconName}.svg`] || null;
+  icons[`../assets/svg/icons/${iconName}.svg`] || null;
 
 const Switcher = ({
   checked = false,
@@ -23,25 +23,28 @@ const Switcher = ({
   };
 
   return (
-    <label className={`${styles.switcher} ${disabled ? styles.disabled : ''}`}>
+    <label
+      className={`${styles.switcher} ${disabled ? styles['switcher--disabled'] : ''}`}
+    >
       <input
         type="checkbox"
         checked={isChecked}
         disabled={disabled}
         onChange={handleToggle}
+        className={styles.switcher__input}
       />
 
       {/* Внешний контейнер */}
-      <span className={styles.slider}>
+      <span className={styles.switcher__slider}>
         {/* Левая иконка */}
         <span
-          className={styles.icon}
+          className={styles.switcher__icon}
           dangerouslySetInnerHTML={{ __html: getIcon(leftIcon) }}
         />
 
         {/* Индикатор с белой иконкой при активации */}
         <span
-          className={styles.indicator}
+          className={styles.switcher__indicator}
           dangerouslySetInnerHTML={{
             __html: getIcon(isChecked ? rightIcon : leftIcon),
           }}
@@ -49,7 +52,7 @@ const Switcher = ({
 
         {/* Правая иконка */}
         <span
-          className={styles.icon}
+          className={styles.switcher__icon}
           dangerouslySetInnerHTML={{ __html: getIcon(rightIcon) }}
         />
       </span>

@@ -1,92 +1,115 @@
+@use '../../style/utils/typography.scss' as *;
+@use '../../style/global/breakpoints.scss' as *;
+
 .switcher {
   display: flex;
   align-items: center;
   cursor: pointer;
   position: relative;
   background-color: var(--white);
-  border-radius: 12px; /* Закругляем края */
-  overflow: hidden; /* Ограничиваем выход элементов за границы */
-  input {
+  border-radius: 1.2rem; // Закругляем края
+  overflow: hidden; // Ограничиваем выход элементов за границы
+  width: 8rem;
+  height: 4rem;
+
+  &__input {
     display: none;
   }
 
-  .slider {
-    width: 80px;
-    height: 40px;
+  &__slider {
+    width: 8rem;
+    height: 4rem;
     background-color: var(--white);
-    border-radius: 12px;
+    border-radius: 1.2rem;
     position: relative;
-    border: 1px solid var(--border-color);
+    border: 0.1rem solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    padding: 2px;
+    gap: 2rem;
+    padding: 0.2rem;
+
+    @include mobile {
+      width: 7.2rem;
+      height: 3.6rem;
+      gap: 1.4rem;
+      padding: 0.2rem;
+    }
   }
 
-  .indicator {
+  &__indicator {
     position: absolute;
-    left: 5px;
-    width: 36px;
-    height: 36px;
+    left: 0.2rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    padding: 0.6rem;
     background-color: var(--ultramarine-default-color);
-    border-radius: 12px;
+    border-radius: 1.2rem;
     transition: all 0.3s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    svg path {
-      stroke: var(--white);
+    svg {
+      width: 2rem;
+      height: 2rem;
+
+      path {
+        stroke: var(--white);
+      }
+    }
+
+    @include mobile {
+      width: 3.2rem;
+      height: 3.2rem;
+      left: 0.2rem;
+      border-radius: 1rem;
+      padding: 0;
+
+      svg {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
     }
   }
 
-  svg path {
-    stroke: var(--text-secondary-color);
+  &__icon {
+    svg {
+      path {
+        stroke: var(--text-secondary-color);
+      }
+    }
+
+    @include mobile {
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
   }
 
-  /* Эффект hover при наведении для неактивной иконки */
-  .slider:hover svg path {
+  // Эффект hover при наведении
+  &__slider:hover &__icon svg path {
     stroke: var(--ultramarine-default-color);
   }
 
-  /* Эффект hover при наведении для активной иконки*/
-  .slider:hover .indicator svg path {
+  &__slider:hover &__indicator svg path {
     stroke: var(--white);
   }
 
-  /* Двигаем индикатор при активации*/
-  input:checked + .slider .indicator {
-    transform: translateX(40px);
+  // Двигаем индикатор при активации
+  &__input:checked + &__slider &__indicator {
+    transform: translateX(3.8rem);
+
+    @include mobile {
+      transform: translateX(3.4rem);
+    }
   }
 
-  /* Disabled */
-  .disabled {
+  // Disabled
+  &--disabled {
     cursor: not-allowed;
     opacity: 0.5;
     pointer-events: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .switcher {
-    .slider {
-      width: 72px;
-      height: 36px;
-      background-color: var(--white);
-      padding: 2px;
-      gap: 14px;
-    }
-    .indicator {
-      width: 32px;
-      height: 32px;
-      left: 4px;
-      border-radius: 10px;
-    }
-
-    /* Двигаем индикатор при активации*/
-    input:checked + .slider .indicator {
-      transform: translateX(35px);
-    }
   }
 }
