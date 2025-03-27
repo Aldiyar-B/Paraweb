@@ -4,11 +4,10 @@
 .tag {
   display: inline-flex;
   align-items: center;
-  padding: 4px 8px;
-  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.8rem;
   cursor: default;
   white-space: nowrap;
-
   background-color: var(--gray-color-3);
   color: var(--text-secondary-color);
 
@@ -19,25 +18,36 @@
   &:active {
     background-color: var(--gray-color-3);
   }
-  @include text-tag;
 
-  &.cyan {
+  @include text-tag;
+  @include mobile {
+    @include text-tag;
+  }
+
+  &__label {
+  }
+
+  &--cyan {
     background-color: var(--cyan-light-color);
     color: var(--cyan-default-color);
   }
-  &.purple {
+
+  &--purple {
     background-color: var(--purple-light-color);
     color: var(--purple-default-color);
   }
-  &.green {
+
+  &--green {
     background-color: var(--electric-green-light-color-2);
     color: var(--electric-green-default-color);
   }
-  &.red {
+
+  &--red {
     background-color: var(--suai-red-light-2-color);
     color: var(--suai-red-light-1-color);
   }
-  &.blue {
+
+  &--blue {
     background-color: var(--suai-blue-light-color);
     color: var(--suai-blue-default-color);
   }
