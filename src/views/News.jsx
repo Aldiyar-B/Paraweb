@@ -52,6 +52,10 @@ function News() {
         <Link to="/test">
           <button className="text-button">Открыть test полигон</button>
         </Link>
+        <br />
+        <Link to="/textContentArea">
+          <button className="text-button">Открыть textContent Area</button>
+        </Link>
       </nav>
       <EventCard {...event} />
       <br />
