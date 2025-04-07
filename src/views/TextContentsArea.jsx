@@ -55,6 +55,12 @@ function TextContentsArea() {
                     <td>12:00 - 17:00</td>
                     <td>Центр развития профессиональных компетенций ГУАП</td>
                 </tr>
+                <tr>
+                    <td>11-я международная научная конференция «Философия и культура информационного общества»</td>
+                    <td>28 октября</td>
+                    <td>12:00 - 17:00</td>
+                    <td>Центр развития профессиональных компетенций ГУАП</td>
+                </tr>
             </tbody>
         </table>
     </figure>
@@ -76,8 +82,7 @@ function TextContentsArea() {
     <div
       style={{ backgroundColor: '#eeeff2', padding: '20px', height: '100%' }}
     >
-      <h1 className="text-h1">Dashboard</h1>
-      <h4 className="text-h4">Это приватная страница</h4>
+      <h1 className="text-h1">Полигон для Text Content</h1>
 
       <TextContent html={html} />
 
